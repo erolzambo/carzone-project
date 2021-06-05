@@ -1,0 +1,77 @@
+====================
+SET UP INITIALS
+
+1- create virtual environment
+2. instal django 
+	pip install django or pip install django==3.0.7 (version)
+
+3- create project 
+	django-admin startproject project_name
+
+4- create an app (can have multiple app in one project)
+	python manage.py startapp app_name
+
+5- add your app in the main setting files under the INSTALL_APPS part
+
+	in our case name of app is pages
+	'pages', OR 'pages.apps.PagesConfig',
+
+6-create a urls.py file inside the pages (app) folder.
+
+	copy the code below (from main urls.py)
+	
+	from django.urls import path
+
+	urlpatterns = [
+    
+	]
+
+7-go to the main urls.py and add the code
+
+	path('', include('pages.urls')),
+
+8- go to the urls.py again (pages) add the code 
+
+	from django.urls import path
+	from . import views
+
+	urlpatterns = [
+    		path('', views.home, name='home')
+	]
+
+9- very top level create a folder name it templates
+
+	inside the template create folder pages and inside the pages create home.html file
+
+10- main setting file go TEMPLATES and 
+
+	'DIRS': ['templates'],
+
+
+11-runserver
+
+
+
+===========================================
+git hub
+
+create new repository
+
+or create a new repository on the command line
+echo "# carzone-project" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/erolzambo/carzone-project.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/erolzambo/carzone-project.git
+git branch -M main
+git push -u origin main
+
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+
