@@ -55,6 +55,9 @@ SET UP INITIALS
 ===========================================
 git hub
 
+username:erolzambo
+password: 2206029azb
+
 create new repository
 
 or create a new repository on the command line
@@ -74,4 +77,10 @@ git push -u origin main
 …or import code from another repository
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
 
+=====================
+if you make any changes and to update git hub
 
+git add -A // add all the files
+git commit -m "second commit or anything"
+
+git push origin master
