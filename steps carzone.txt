@@ -50,14 +50,30 @@ SET UP INITIALS
 
 11-runserver
 
+=======================================
 
+****************************
 
-===========================================
+heroku
+
+2206029azb///
+
 git hub
 
 username:erolzambo
 password: 2206029azb
 
+django admin
+username"
+password:
+
+
+PostgreSQL 
+password:19821988
+
+===========================================
+
+========================================================
 create new repository
 
 or create a new repository on the command line
@@ -84,3 +100,28 @@ git add -A // add all the files
 git commit -m "second commit or anything"
 
 git push origin master
+
+
+
+
+================================================
+STATIC FILES REGISTER 
+
+1 GO TO SETTINGS inside the static folder
+
+
+	STATIC_URL = '/static/'
+	STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+	STATICFILES_DIRS = [
+
+		os.path.join(BASE_DIR, 'carzone/static')
+	]
+
+
+
+2 python manage.py collectstatic
+3 MAKE ALL STATIC FILES DYNAMIC
+
+	{% load static %}
+
+	{% static 'css/....' %}
