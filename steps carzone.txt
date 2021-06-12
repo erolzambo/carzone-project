@@ -71,6 +71,13 @@ password:
 PostgreSQL 
 password:19821988
 
+
+
+superuser
+
+username:erolbilican
+password: 123456
+
 ===========================================
 
 ========================================================
@@ -125,3 +132,60 @@ STATIC FILES REGISTER
 	{% load static %}
 
 	{% static 'css/....' %}
+
+
+
+===================================================================
+
+SETTING UP DATABASES
+
+go to the your app's setting file 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'carzone_db',
+        'USER': 'postgres',
+        'PASSWORD': '19821988',
+        'HOST':'localhost'
+    }
+}
+
+
+after that create super user
+
+	python manage.py createsuperuser 
+
+then create username and password. 
+
+(python manage.py makemigrations / python manage.py migrate)
+
+
+=======================================================================
+
+CREATING TEAM PART DATABASE MODEL.
+
+	GO TO PAGES APP > MODELS.PY
+
+==========================================================================
+# MEDIA SETTINGS
+	goto settings.py (yourapp)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+-----------------------------------------------------
+URLS.PY  PROJECT LEVEL
+
+	from django.contrib import admin
+from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
+
+urlpatterns = [
+                  path('admin/', admin.site.urls),
+                  path('', include('pages.urls')),
+
+              ] + static(settings.MEDIA_URL, document_root=settings.mEDIA_ROOT)
+
+================================================================================
+
+
